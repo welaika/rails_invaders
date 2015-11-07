@@ -4,5 +4,13 @@ en:
     game: "Play now!"
     leaderboard: "Leaderboard"
     instructions: "Instructions"
+  pages:
+    home:
+      hero:
+        head: "Play to classic space invaders game against other players active now"
+        text: "Challenge other users and climb leaderboard live becoming the new Rails Invaders Hero. Are you so brave?"
+  button:
+    github:
+      long: "Signup/Signin with Github"
   titles:
     application: Rails-invaders
