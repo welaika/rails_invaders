@@ -21,11 +21,23 @@ explodeSound = ''
 explosions = ''
 gameOverText = ''
 restartText = ''
+canvasWidth = 1024
+alienImageSize = 30
+alienSize = 48
+aliensPerRow = 16
+
+borderSpace = ->
+  canvasWidth - (alienSize * (aliensPerRow - 1))
 
 preload = ->
   game.load.image('ship', "<%= image_path('ship.png') %>")
   game.load.image('bullet', "<%= image_path('bullet.png') %>")
-  game.load.image('alien', "<%= image_path('alien.png') %>")
+  game.load.image("alien0", "<%= image_path('alien0.png') %>")
+  game.load.image("alien1", "<%= image_path('alien1.png') %>")
+  game.load.image("alien2", "<%= image_path('alien2.png') %>")
+  game.load.image("alien3", "<%= image_path('alien3.png') %>")
+  game.load.image("alien4", "<%= image_path('alien4.png') %>")
+  game.load.image("alien5", "<%= image_path('alien5.png') %>")
   game.load.image('bomb', "<%= image_path('bomb.png') %>")
   game.load.spritesheet('explosion', "<%= image_path('explosion.png') %>", 80, 80)
   game.load.audio('shoot', "<%= asset_path('shoot.wav') %>")
@@ -145,7 +157,7 @@ fireBullet = ->
       bullet.reset(player.x, player.y - 16)
       bullet.body.velocity.y = -400
       bullet.body.velocity.x = player.body.velocity.x / 4
-      bulletTime = game.time.now + 400
+      bulletTime = game.time.now + 280
 
 bulletHitsAlien = (bullet, alien) ->
   bullet.kill()
@@ -228,16 +240,16 @@ createAliens = ->
   aliens.physicsBodyType = Phaser.Physics.ARCADE
 
   y = 0
-  while y < 4
+  while y < 6
     x = 0
-    while x < 10
-      alien = aliens.create(x * 72, y * 48, 'alien')
+    while x < aliensPerRow
+      alien = aliens.create(x * alienSize, y * alienSize, "alien#{y}")
       alien.anchor.setTo 0.5, 0.5
       alien.body.moves = false
       x++
     y++
 
-  aliens.x = 64
+  aliens.x = alienImageSize
   aliens.y = 96
 
   aliens.forEach (alien, i) ->
@@ -245,7 +257,7 @@ createAliens = ->
 
 animateAliens = ->
   # All this does is basically start the invaders moving. Notice we're moving the Group they belong to, rather than the invaders directly.
-  tween = game.add.tween(aliens).to( { x: 308 }, 2500, Phaser.Easing.Sinusoidal.InOut, true, 0, 1000, true)
+  tween = game.add.tween(aliens).to( { x: (borderSpace() - alienImageSize) }, 3000, Phaser.Easing.Sinusoidal.InOut, true, 0, 1000, true)
 
   # When the tween loops it calls descend
   tween.onLoop.add(descend, this)
@@ -278,4 +290,4 @@ pad = (number, length) ->
   return str
 
 if $("[data-game=true]").length > 0
-  game = new Phaser.Game(1024, 576, Phaser.AUTO, 'game', { preload: preload, create: create, update: update })
+  game = new Phaser.Game(canvasWidth, 576, Phaser.AUTO, 'game', { preload: preload, create: create, update: update })
