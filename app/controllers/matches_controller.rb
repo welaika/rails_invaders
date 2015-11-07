@@ -16,5 +16,12 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
+    if @match.pending?
+      @match.started!
+      render :play
+    else
+      @match.finished!
+      render :recap
+    end
   end
 end
