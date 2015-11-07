@@ -13,7 +13,9 @@ html
     title= title
     = stylesheet_link_tag :application, media: 'all'
     = csrf_meta_tags
-  body class=body_class
+  body.grid class=body_class
+    = render "nav"
     = render "flashes"
-    = yield
+    .wrap
+      = yield
     = render "javascript"

@@ -61,4 +61,13 @@
       display: table-cell
       margin: 0
       white-space: nowrap
+      padding: 1em
+      text-transform: uppercase
+      text-decoration: none
+      &.active, &:hover
+        color: $active-color
+        background-color: darken($light-bg-color, 10%)
+
+.nav--main
+  background-color: $light-bg-color
 

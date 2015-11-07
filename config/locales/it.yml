@@ -1,3 +1,5 @@
 it:
+  nav:
+    home: "Home"
   titles:
     application: Rails-invaders
