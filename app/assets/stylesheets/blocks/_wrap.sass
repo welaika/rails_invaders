@@ -1,6 +1,12 @@
 .wrap
   +wrap
 
+.wrap--main
+  +wrap
+  background: image-url('wrap-main-bg.png') no-repeat center top
+  background-size: 100% auto
+  min-height: $wrap-width / 2
+
 @each $name in $breakpoint-names
   .wrap--on-#{$name}
     +at-breakpoint($name)

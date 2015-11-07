@@ -16,6 +16,7 @@ html
   body.grid class=body_class
     = render "nav"
     = render "flashes"
-    .wrap
+    .wrap--main.space--top-3
+      = render "header"
       = yield
     = render "javascript"
