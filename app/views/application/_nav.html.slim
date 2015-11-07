@@ -1,7 +1,7 @@
 .nav--main
   .wrap
     .grid__item.nav--expand.align--center
-      = link_to t('nav.home'), root_path, class: 'nav__item'
-      = link_to t('nav.home'), root_path, class: 'nav__item'
-      = link_to t('nav.home'), root_path, class: 'nav__item'
-      = link_to t('nav.home'), root_path, class: 'nav__item'
+      = link_to t("nav.home"), root_path, class: "nav__item #{'active' if root_path == page_path || '/' }"
+      = link_to t("nav.game"), root_path, class: "nav__item #{'active' if root_path == page_path}"
+      = link_to t("nav.leaderboard"), root_path, class: "nav__item #{'active' if root_path == page_path}"
+      = link_to t("nav.instructions"), root_path, class: "nav__item #{'active' if root_path == page_path}"

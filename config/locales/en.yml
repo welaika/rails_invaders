@@ -1,5 +1,8 @@
 en:
   nav:
     home: "Home"
+    game: "Play now!"
+    leaderboard: "Leaderboard"
+    instructions: "Instructions"
   titles:
     application: Rails-invaders

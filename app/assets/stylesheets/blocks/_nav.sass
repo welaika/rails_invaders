@@ -51,7 +51,7 @@
   .nav__item--last
     padding: 0.4em
 
-+at-breakpoint(desk)
++at-breakpoint(lap)
   .nav--expand
     display: table
     width: 100%
@@ -61,13 +61,17 @@
       display: table-cell
       margin: 0
       white-space: nowrap
-      padding: 1em
-      text-transform: uppercase
-      text-decoration: none
-      &.active, &:hover
-        color: $active-color
-        background-color: darken($light-bg-color, 10%)
 
 .nav--main
   background-color: $light-bg-color
+  .nav__item
+    padding: 1em
+    text-transform: uppercase
+    text-decoration: none
+    border-right: 1px solid $bg-color
+    &:last-child
+      border-right: none
+    &.active, &:hover
+      color: $active-color
+      background-color: darken($light-bg-color, 10%)
 
