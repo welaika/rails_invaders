@@ -1,5 +1,5 @@
 - if current_user.present?
-  = link_to new_match_path, class: "button--huge button--active"
+  = link_to matches_path, method: :post, class: "button--huge button--active"
     i.fa= "#{current_user.name || 'Player'} start game!"
 - else
   = link_to signin_path, class: "button--huge button--active"

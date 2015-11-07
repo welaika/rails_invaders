@@ -24,6 +24,7 @@ gem "title"
 gem "uglifier"
 gem "omniauth"
 gem "omniauth-github"
+gem "active_link_to"
 
 source "https://rails-assets.org" do
   gem "rails-assets-fontawesome", "4.3.0"

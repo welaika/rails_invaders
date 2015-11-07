@@ -1,10 +1,10 @@
 .nav--main
   .wrap
     .grid__item.nav--expand.align--center
-      = link_to t("nav.home"), root_path, class: "nav__item #{'active' if root_path == request.path }"
-      = link_to t("nav.game"), new_match_path, class: "nav__item #{'active' if new_match_path == request.path}"
-      = link_to t("nav.leaderboard"), page_path('leaderboard'), class: "nav__item #{'active' if page_path('leaderboard') == request.path}"
-      = link_to t("nav.instructions"), page_path('instructions'), class: "nav__item #{'active' if page_path('instructions') == request.path}"
+      = active_link_to t("nav.home"), root_path, class: "nav__item", active: :exact
+      = active_link_to t("nav.game"), matches_path, method: :post, class: "nav__item"
+      = active_link_to t("nav.leaderboard"), page_path('leaderboard'), class: "nav__item", active: [['users'], ['create']]
+      = active_link_to t("nav.instructions"), page_path('instructions'), class: "nav__item", active: :exact
       - if current_user.present?
         = link_to signout_path, class: "nav__item"
           i.fa.fa-github-alt

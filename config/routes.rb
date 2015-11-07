@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  resources :matches
+  resources :matches, only: [:create, :show]
   resource :ping_users, only: [:create]
 
   get '/auth/:provider/callback' => 'sessions#create'
