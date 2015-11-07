@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  match "/websocket", to: ActionCable.server, via: [:get, :post]
 
   resources :matches
+  resource :ping_users, only: [:create]
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', as: :signin

@@ -6,3 +6,7 @@
   javascript:
     $.fx.off = true;
     $.ajaxSetup({ async: false });
+
+javascript:
+  window.App = window.App || {};
+  window.App.PING_TIMEOUT = #{User::PING_TIMEOUT * 1000};
