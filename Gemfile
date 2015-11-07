@@ -15,10 +15,8 @@ gem "neat", "~> 1.7.0"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
 gem "puma"
-gem "rack-canonical-host"
 gem "rails", "~> 4.2.0"
 gem "rails-i18n"
-gem "redis"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "slim-rails"
@@ -41,7 +39,6 @@ group :development do
   gem "refills"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "web-console"
 end
 
 group :development, :test do
@@ -75,6 +72,5 @@ group :test do
 end
 
 group :staging, :production do
-  gem "rack-timeout"
   gem "rails_stdout_logging"
 end
