@@ -14,4 +14,6 @@
 //= require jquery-ujs
 //= require lodash
 //= require cable
+//= require phaser
+//= require cookies-js
 //= require_tree .
