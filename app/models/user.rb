@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
+  TIMEOUT = 40
+
   has_many :matches
+
+  scope :currently_playing, -> { where('last_ping_at > :timestamp', timestamp: User::TIMEOUT.seconds.ago) }
 
   def self.create_with_omniauth(auth)
     create! do |user|
