@@ -4,9 +4,7 @@
   cursor: pointer
 
   input
-    position: absolute
-    opacity: 0
-    z-index: -1
+    text-transform: uppercase
 
     &:focus ~ .input__label:before
       color: $base-body-color
@@ -28,14 +26,27 @@
 .input--radio
   @extend .input
 
+  input
+    position: absolute
+    opacity: 0
+    z-index: -1
+
 .input--checkbox
   @extend .input
+
+  input
+    position: absolute
+    opacity: 0
+    z-index: -1
 
   .input__label:before
     +icon-content(checkbox-off)
 
   input:checked ~ .input__label:before
     +icon-content(checkbox-on)
+
+.input--multi-checkbox
+  @extend .input--checkbox
 
 .input--radio
   @extend .input
@@ -46,3 +57,19 @@
   input:checked ~ .input__label:before
     +icon-content(radio-on)
 
+.input__select select
+  @extend .input
+  background: image-url('caret_down.svg') no-repeat right center transparent
+  background-size: auto 70%
+  -webkit-appearance: none
+  border: 1px solid $border-color
+  border-radius: 0
+  width: 100%
+  padding: 10px
+  box-sizing: border-box
+  line-height: normal
+
+.form__field--euro input
+  background: image-url('eur.svg') no-repeat left center transparent
+  background-size: auto 50%
+  padding-left: 1.5em
