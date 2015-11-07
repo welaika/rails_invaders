@@ -31,6 +31,7 @@ gem "omniauth-github"
 source "https://rails-assets.org" do
   gem "rails-assets-jquery"
   gem "rails-assets-jquery-ujs"
+  gem "rails-assets-lodash"
 end
 
 group :development do

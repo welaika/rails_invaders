@@ -239,6 +239,7 @@ GEM
     rails-assets-jquery (2.1.4)
     rails-assets-jquery-ujs (1.1.0)
       rails-assets-jquery (> 1.8)
+    rails-assets-lodash (3.10.1)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -410,6 +411,7 @@ DEPENDENCIES
   rails (~> 4.2.0)
   rails-assets-jquery!
   rails-assets-jquery-ujs!
+  rails-assets-lodash!
   rails-i18n
   rails_stdout_logging
   redis
