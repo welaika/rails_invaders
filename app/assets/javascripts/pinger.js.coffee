@@ -1,5 +1,5 @@
 $ ->
-  return unless $('body.matches-show').length
+  return unless $('#currently_playing_count').length
 
   pingUser = ->
     $.ajax
