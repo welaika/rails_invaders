@@ -367,6 +367,7 @@ DEPENDENCIES
   launchy
   letter_opener
   neat (~> 1.7.0)
+  nokogiri (= 1.6.0)
   normalize-rails (~> 3.0.0)
   pg
   priscilla

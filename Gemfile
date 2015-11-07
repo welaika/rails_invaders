@@ -44,6 +44,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "faker"
   gem "i18n-tasks"
+  gem "nokogiri", "1.6.0" # fix for new xcode
   gem "priscilla"
   gem "pry-bloodline"
   gem "pry-byebug"
