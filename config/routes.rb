@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'static#home'
   match "/websocket", to: ActionCable.server, via: [:get, :post]
 
   get '/auth/:provider/callback' => 'sessions#create'
