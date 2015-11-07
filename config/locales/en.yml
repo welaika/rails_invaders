@@ -11,6 +11,11 @@ en:
         text: "Challenge other users and climb leaderboard live becoming the new Rails Invaders Hero. Are you so brave?"
   button:
     github:
-      long: "Signup/Signin with Github"
+      signin:
+        long: "Signup/Signin with Github"
+        short: "Signin"
+      signout:
+        long: "Signout from Github"
+        short: "Signout"
   titles:
     application: Rails-invaders

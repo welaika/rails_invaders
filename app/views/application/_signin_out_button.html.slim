@@ -1,0 +1,6 @@
+- if current_user.present?
+  = link_to new_match_path, class: "button--huge button--active"
+    i.fa= "#{current_user.name || 'Player'} start game!"
+- else
+  = link_to signin_path, class: "button--huge button--active"
+    i.fa.fa-github-alt= " #{t('button.github.signin.long')}"

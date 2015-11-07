@@ -1,4 +1,5 @@
 - if flash.any?
-  .flashes
-    - user_facing_flashes.each do |key, value|
-      div(class="flash-#{key}")= value
+  .flashes.grid__item.width-12-12
+    .wrap
+      - user_facing_flashes.each do |key, value|
+        div(class="flash--#{key}")= value

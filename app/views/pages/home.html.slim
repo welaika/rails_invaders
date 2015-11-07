@@ -6,5 +6,4 @@
       = t('pages.home.hero.text')
 
 .grid__item.align--center.space--both-10
-  = link_to signin_path, class: "button--huge button--active"
-    i.fa.fa-github-alt= " #{t('button.github.long')}"
+  = render partial: "signin_out_button"
