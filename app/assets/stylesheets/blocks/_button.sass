@@ -74,6 +74,15 @@
 .button--alert
   @extend .button
 
+.button--active
+  color: $bg-color
+  border: none
+  background-color: $active-color
+  transition: all 0.2s $material-ease
+  &:hover
+    border-top: 0.5em solid $alert-color
+    transition: all 0.3s $material-ease
+
 .button--primary
   color: $primary-color
   border-color: $primary-color
