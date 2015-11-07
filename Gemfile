@@ -26,6 +26,8 @@ gem "simple_form"
 gem "slim-rails"
 gem "title"
 gem "uglifier"
+gem "omniauth"
+gem "omniauth-github"
 
 group :development do
   gem "letter_opener"
