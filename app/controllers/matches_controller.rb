@@ -1,5 +1,9 @@
 class MatchesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:index]
+
+  def index
+    @matches = Match.all.order(score: :desc)
+  end
 
   def create
     @match = Match.new(user_id: current_user.id)

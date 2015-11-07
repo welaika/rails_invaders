@@ -1,0 +1,20 @@
+.wrap--middle.space--top-3
+  .grid__item.width-fill
+    table.table
+      thead
+        tr
+          th= t('.rank')
+        
+          th= t('.nickname')
+        
+          th= t('.points')
+      
+      tbody
+        - @matches.each_with_index do |match, index|
+          tr
+            td
+              = index + 1
+            td
+              = match.user.name          
+            td
+              = match.score

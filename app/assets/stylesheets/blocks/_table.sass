@@ -1,7 +1,7 @@
 .table
   width: 100%
   table-layout: fixed
-  background-color: white
+  background-color: transparentize($bg-color, 0.3)
 
   td, th
     text-align: left
@@ -14,7 +14,7 @@
     border-bottom: 1px solid $border-color
 
   tr:nth-child(2n)
-    background-color: $light-bg-color
+    background-color: $bg-color
 
 +at-breakpoint(lte-lap)
   .table
@@ -53,4 +53,3 @@
         font-variant: small-caps
         text-transform: uppercase
         display: block
-

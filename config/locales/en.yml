@@ -19,3 +19,8 @@ en:
         short: "Signout"
   titles:
     application: Rails-invaders
+  matches:
+    index:
+      rank: Rank
+      nickname: Nickname
+      points: Points
