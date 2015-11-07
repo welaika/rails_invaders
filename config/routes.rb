@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'static#home'
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', as: :signin
