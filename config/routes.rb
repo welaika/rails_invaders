@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  match "/websocket", to: ActionCable.server, via: [:get, :post]
 
   resources :matches
 

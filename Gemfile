@@ -24,7 +24,6 @@ gem "title"
 gem "uglifier"
 gem "omniauth"
 gem "omniauth-github"
-gem "actioncable", github: "rails/actioncable"
 
 source "https://rails-assets.org" do
   gem "rails-assets-fontawesome", "4.3.0"
