@@ -12,7 +12,6 @@ gem "email_validator"
 gem "faye-websocket"
 gem "flutie"
 gem "high_voltage"
-gem "jquery-rails"
 gem "neat", "~> 1.7.0"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
@@ -28,6 +27,11 @@ gem "title"
 gem "uglifier"
 gem "omniauth"
 gem "omniauth-github"
+
+source "https://rails-assets.org" do
+  gem "rails-assets-jquery"
+  gem "rails-assets-jquery-ujs"
+end
 
 group :development do
   gem "letter_opener"
