@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
   before_filter :authenticate_user!, except: [:index]
 
   def index
-    @matches = Match.all.order(score: :desc)
+    @matches = Match.all.order(score: :desc).limit(20)
   end
 
   def create
