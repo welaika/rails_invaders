@@ -1,3 +1,4 @@
 class Match < ActiveRecord::Base
-  validates :user, :score, presence: true
+  belongs_to :user
+  validates :user_id, :score, presence: true
 end
