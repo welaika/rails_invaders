@@ -99,3 +99,16 @@
   @extend .button
   border-color: white
   color: white
+
+.button--keyboard
+  width: 2em
+  height: 2em
+  display: inline-block
+  background-color: $active-color
+  color: $bg-color
+  text-align: center
+
+.button--keyboard-spacebar
+  @extend .button--keyboard
+  width: 50%
+  min-width: 10em

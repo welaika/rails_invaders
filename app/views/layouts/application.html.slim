@@ -8,10 +8,11 @@ html
     title= title
     = stylesheet_link_tag :application, media: 'all'
     = csrf_meta_tags
-  body.grid class=body_class
-    = render "nav"
-    = render "flashes"
+  body class=body_class
+    .grid= render "nav"
+    .grid= render "flashes"
     .wrap--main.space--top-3
-      = render "header"
-      = yield
+      .grid
+        = render "header"
+        = yield
     = render "javascript"
