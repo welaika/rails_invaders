@@ -29,9 +29,11 @@ gem "omniauth"
 gem "omniauth-github"
 
 source "https://rails-assets.org" do
+  gem "rails-assets-fontawesome", "4.3.0"
   gem "rails-assets-jquery"
   gem "rails-assets-jquery-ujs"
   gem "rails-assets-lodash"
+  gem "rails-assets-normalize-css"
 end
 
 group :development do
