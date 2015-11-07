@@ -233,8 +233,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.4.2)
-    recipient_interceptor (0.1.2)
-      mail
+    redis (3.2.1)
     refills (0.1.0)
     request_store (1.2.0)
     rspec-core (3.3.2)
@@ -381,7 +380,7 @@ DEPENDENCIES
   rails (~> 4.2.0)
   rails-i18n
   rails_stdout_logging
-  recipient_interceptor
+  redis
   refills
   rspec-rails (~> 3.3.0)
   rubocop
