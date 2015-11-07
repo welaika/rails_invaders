@@ -1,0 +1,8 @@
+production: &production
+  :url: <%= ENV['REDIS_URL'] %>
+  :timeout: 1
+development: &development
+  :url: redis://localhost:6379
+  :timeout: 1
+  :inline: true
+test: *development
