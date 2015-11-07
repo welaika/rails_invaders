@@ -17,6 +17,7 @@
   transition: box-shadow 0.1s $material-ease, transform 0.1s $material-ease, text-shadow 0.1s $material-ease
   font-size: 1.1em
   box-shadow: 0 0 0 rgba(black, 0.2)
+  margin-right: 0.5em
 
   .no-touch &:hover
     box-shadow: 0 3px 5px rgba(black, 0.2)
@@ -29,6 +30,9 @@
   i:first-child
     margin-right: 0.5em
 
+  &:last-child
+    margin-right: 0
+
   i:last-child
     margin-left: 0.5em
 
@@ -39,6 +43,17 @@
 .button--small
   @extend .button
   font-size: 0.9em
+
+.button--small--horizontal
+  @extend .button
+  font-size: 0.9em
+  padding: 0.3em 1em
+  color: $light-bg-color
+  border-color: $primary-color
+  background-color: $primary-color
+  a
+    text-decoration: none
+    color: $white
 
 .button--large
   @extend .button
