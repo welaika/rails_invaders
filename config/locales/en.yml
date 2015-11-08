@@ -8,7 +8,7 @@ en:
     home:
       play_with_leapmotion: "Play with LeapMotion!"
       hero:
-        head: "Play to classic space invaders game against other players active now"
+        head: "Play to classic space invaders game against other players active now. Also with LeapMotion!"
     leaderboard:
       title: "Leaderboard"
       description: "Fight enemies stronger to enter in the All of Fame!"
