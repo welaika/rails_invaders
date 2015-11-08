@@ -136,9 +136,6 @@ update = ->
   game.physics.arcade.overlap(bullets, aliens, bulletHitsAlien, null, this)
   game.physics.arcade.overlap(bombs, player, bombHitsPlayer, null, this)
 
-  # Update score
-  $('input#match_score').val(score)
-
 setupExplosion = (explosion)->
   explosion.animations.add('explode')
 
@@ -216,6 +213,8 @@ updateLevel = ->
 
 updateScore = ->
   scoreText.text = pad(score, 6)
+  # Update score form
+  $("#game").trigger("score-updated", score)
 
 respawnPlayer = ->
   player.body.x = initialPlayerPosition
@@ -244,6 +243,8 @@ restartGame = ->
   newWave()
 
 gameOver = ->
+  $("#game").trigger("game-over", score)
+
   setTimeout(->
     gameOverText = game.add.text(game.world.centerX, game.world.centerY, "GAME OVER", boldStyle)
     gameOverText.anchor.set(0.5, 0.5)

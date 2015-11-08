@@ -1,8 +1,22 @@
 $ ->
-  return unless $('#match-form').length
+  return unless $('#game').length
 
-  updateMatch = ->
+  sendMatchToServer = ->
     $("#match-form").submit()
 
-  updateMatch()
-  setInterval updateMatch, window.App.MATCH_UPDATE_INTERVAL
+  updateScore = (score) ->
+    $("input#match_score").val(score)
+
+  setMatchFinished = ->
+    $("input#match_status").val("finished")
+
+  $("#game").on "score-updated", (event, score) ->
+    updateScore(score)
+
+  $("#game").on "game-over", (event, score) ->
+    updateScore(score)
+    setMatchFinished()
+    sendMatchToServer()
+    clearInterval(updateInterval)
+
+  updateInterval = setInterval sendMatchToServer, window.App.MATCH_UPDATE_INTERVAL
