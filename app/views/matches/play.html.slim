@@ -9,3 +9,7 @@
 
 .game__field.grid__item.width-fill.space--top-3
   #game data-game=true data-polling=true
+
+- content_for :javascript
+  = javascript_include_tag "//js.leapmotion.com/leap-0.6.4.js"
+  = javascript_include_tag "//js.leapmotion.com/leap-plugins-0.1.11.js"
