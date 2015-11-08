@@ -137,6 +137,9 @@ update = ->
   game.physics.arcade.overlap(bullets, aliens, bulletHitsAlien, null, this)
   game.physics.arcade.overlap(bombs, player, bombHitsPlayer, null, this)
 
+  # Update score
+  $('input#match_score').val(score)
+
 setupExplosion = (explosion)->
   explosion.animations.add('explode')
 
