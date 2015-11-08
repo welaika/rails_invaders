@@ -9,7 +9,8 @@ a name="game"
   .game__live-container
     .game__live__active-users
       #currently_playing_count data-polling=true
-      .game__live__image= image_tag('ship.png')
+      .game__live__image
+        = " #{image_tag('ship.png')}".html_safe
       .game__live__subtitle= t('matches.play.online_users')
     .game__live__arrows
       .game__live__arrow#level-up
@@ -19,7 +20,7 @@ a name="game"
         i.fa.fa-arrow-down.title--active
         = t('matches.play.level_down')
     .game__live__rank
-      .game__live__image= image_tag('cup.png')
+      .game__live__image= "#{image_tag('cup.png')} ".html_safe
       #current_player_rank data-polling=true
       .game__live__subtitle= t('matches.play.rank')
   #game data-game=true data-polling=true
