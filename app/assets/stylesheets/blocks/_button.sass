@@ -79,9 +79,33 @@
   border: none
   background-color: $active-color
   transition: all 0.2s $material-ease
+  transform-style: preserve-3d
+  position: relative
+  width: 100%
   &:hover
-    border-top: 0.5em solid $alert-color
+    transform: rotateX(-20deg)
+    // border-top: 0.5em solid $alert-color
     transition: all 0.3s $material-ease
+
+.button--3d-container
+  position: relative
+  margin: 0 auto
+  perspective: 350px
+  width: 22em
+  &:hover
+    .button__shadow
+      transform: rotateX(55deg)
+      top: -10px
+      transition: all 0.3s $material-ease
+  .button__shadow
+    transition: all 0.2s $material-ease
+    background-color: $alert-color
+    height: 1em
+    width: 100%
+    position: absolute
+    left: 0
+    top: -0.5em
+    transform: rotateX(90deg)
 
 .button--primary
   color: $primary-color
