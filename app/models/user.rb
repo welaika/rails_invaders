@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :matches
 
-  scope :currently_playing, -> { where('last_ping_at > :timestamp', timestamp: User::PING_TIMEOUT.seconds.ago) }
+  scope :currently_playing, -> { where('last_ping_at > :timestamp', timestamp: (User::PING_TIMEOUT * 3).seconds.ago) }
 
   def self.create_with_omniauth(auth)
     create! do |user|
