@@ -18,7 +18,7 @@ en:
         long: "Signout from Github"
         short: "Signout"
   titles:
-    application: Rails-invaders
+    application: Rails Invaders
   matches:
     index:
       rank: Rank
