@@ -27,7 +27,7 @@ en:
     size_failed: "sorry but your screen resolution isn't enough to beat Invaders :("
     index:
       rank: Rank
-      nickname: Nickname
+      nickname: User
       points: Points
     recap:
       ended: Your game is ended

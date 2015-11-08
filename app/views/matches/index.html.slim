@@ -15,7 +15,10 @@
       .table__tr class="table__position--#{index}"
         .table__td.grid__item.width-3-12
           = (index + 1).ordinalize
-        .table__td.grid__item.width-6-12
+        .table__td.grid__item.width-2-12
+          .match__user-image
+            = image_tag match.user.profile_image_url
+        .table__td.grid__item.width-4-12
           = match.user.name
         .table__td.grid__item.width-3-12
           = match.score
