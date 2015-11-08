@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
 
   def index
     @top_matches = Match.includes(:user).order_by_score.limit(20)
-    @top_users = User.joins(:matches).order_by_matches_count.limit(20)
+    @top_users = User.joins(:matches).distinct.order_by_matches_count.limit(20)
   end
 
   def new
