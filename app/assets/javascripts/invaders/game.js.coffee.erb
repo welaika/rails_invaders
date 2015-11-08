@@ -113,6 +113,8 @@ update = ->
   playerMovement()
 
   # Firing?
+  if (leapMotionController.handIsOpen && player.alive)
+    fireBullet()
   if (fireButton.isDown && player.alive)
     fireBullet()
 
@@ -132,20 +134,23 @@ setupExplosion = (explosion)->
 playerMovement = ->
   maxVelocity = 500
 
-  if (cursors.left.isDown && player.body.velocity.x > -maxVelocity)
-    # Move to the left
-    player.body.velocity.x -= 20
-
-  else if (cursors.right.isDown && player.body.velocity.x < maxVelocity)
-    # Move to the right
-    player.body.velocity.x += 20
-
+  if (leapMotionController.enabled)
+    player.body.position.x = leapMotionController.handPalmPositionX * 1024
   else
-    # Slow down
-    if (player.body.velocity.x > 0)
-      player.body.velocity.x -= 4
-    else if (player.body.velocity.x < 0)
-      player.body.velocity.x += 4
+    if (cursors.left.isDown && player.body.velocity.x > -maxVelocity)
+      # Move to the left
+      player.body.velocity.x -= 20
+
+    else if (cursors.right.isDown && player.body.velocity.x < maxVelocity)
+      # Move to the right
+      player.body.velocity.x += 20
+
+    else
+      # Slow down
+      if (player.body.velocity.x > 0)
+        player.body.velocity.x -= 4
+      else if (player.body.velocity.x < 0)
+        player.body.velocity.x += 4
 
 fireBullet = ->
   if (game.time.now > bulletTime)
