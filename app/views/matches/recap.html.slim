@@ -1,9 +1,9 @@
-.wrap--middle.space--top-3
+.wrap--middle.space--top-3.align--center
   .grid__item.width-fill
     h2= t(".ended")
 
-    h3
+    h2
       = t(".total_score")
-      | : 
-      = @match.score
-
+      = ": #{@match.score}"
+    .space--both-3
+      = render partial: "signin_out_button"

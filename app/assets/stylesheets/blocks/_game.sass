@@ -9,3 +9,61 @@
     margin: 0 auto
     z-index: 1
 
+.game__live-container
+  @extend #game
+  font-size: 32px
+  padding-top: 0.5em
+
+.game__live__active-users
+  display: inline-block
+  float: left
+  padding-left: 0.5em
+  #currently_playing_count
+    display: inline-block
+
+.game__live__rank
+  display: inline-block
+  float: right
+  padding-right: 0.5em
+  text-align: right
+  #current_player_rank
+    display: inline-block
+
+.game__live__image
+  display: inline-block
+  img
+    width: 1em
+
+.game__live__arrows
+  position: absolute
+  left: 50%
+
+.game__live__arrow
+  color: $active-color
+  +heading-font-family
+  display: none
+  &.active
+    display: block
+    opacity: 1
+    transform: translateX(-50%) scale(1)
+    animation-name: arrowAnimate
+    animation-duration: 4s
+
+@-webkit-keyframes arrowAnimate
+  from
+    opacity: 1
+    transform: translateX(-50%) scale(1)
+  to
+    opacity: 0
+    transform: translateX(-50%) scale(6)
+
+@keyframes arrowAnimate
+  from
+    opacity: 1
+    transform: translateX(-50%) scale(1)
+  to
+    opacity: 0
+    transform: translateX(-50%) scale(6)
+
+.game__live__subtitle
+  +rem-html-reset(1)

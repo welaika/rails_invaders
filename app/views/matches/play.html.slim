@@ -1,11 +1,23 @@
-.grid__item.width--fill
-  h1#currently_playing_count data-polling=true
-  h1#current_player_rank data-polling=true
-
 .hidden
   = simple_form_for @match, remote: true, html: { id: "match-form" }, data: { polling: true } do |f|
     = f.input :score
     = f.input :status, as: :string
 
 .game__field.grid__item.width-fill.space--top-3
+  .game__live-container
+    .game__live__active-users
+      #currently_playing_count data-polling=true
+      .game__live__image= image_tag('ship.png')
+      .game__live__subtitle= t('matches.play.online_users')
+    .game__live__arrows
+      .game__live__arrow#level-up
+        i.fa.fa-arrow-up.title--active
+        = t('matches.play.level_up')
+      .game__live__arrow#level-down
+        i.fa.fa-arrow-down.title--active
+        = t('matches.play.level_down')
+    .game__live__rank
+      .game__live__image= image_tag('cup.png')
+      #current_player_rank data-polling=true
+      .game__live__subtitle= t('matches.play.rank')
   #game data-game=true data-polling=true

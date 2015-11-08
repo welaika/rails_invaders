@@ -30,7 +30,12 @@ en:
       nickname: User
       points: Points
     recap:
-      ended: Your game is ended
+      ended: "The match is ended"
       total_score: Total score
+    play:
+      online_users: "Online user(s)"
+      rank: "Leaderboard rank"
+      level_up: "Level up"
+      level_down: "Level down"
   warnings:
     match_started: You will start a new game. Continue?
