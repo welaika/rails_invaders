@@ -9,3 +9,10 @@
   padding-left: 0
   background-color: transparent
   color: $active-color
+
+.title--active-rotated
+  @extend .title--active
+  position: absolute
+  left: calc(50% + 200px)
+  transform: translateX(-60%) translateY(-50%) rotateZ(10deg)
+  font-size: 14px

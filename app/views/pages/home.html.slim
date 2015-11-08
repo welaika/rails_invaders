@@ -3,7 +3,9 @@
     .hero__heading.align--center
       = t('pages.home.hero.head')
     .hero__text.align--center
-      = t('pages.home.hero.text')
+      .title--active-rotated= t('pages.home.play_with_leapmotion')
+      = image_tag 'leap_h.png'
+    
 
 .grid__item.align--center.space--both-10
   = render partial: "signin_out_button"
