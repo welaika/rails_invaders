@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :matches
 
   scope :currently_playing, -> { where('last_ping_at > :timestamp', timestamp: (User::PING_TIMEOUT * 3).seconds.ago) }
-  scope :order_by_matches_count, -> { order(matches_count: :desc) }
+  scope :order_by_matches_count, -> { where.not(matches_count: nil).order(matches_count: :desc) }
 
   def self.create_with_omniauth(auth)
     create! do |user|
