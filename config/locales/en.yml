@@ -24,3 +24,5 @@ en:
       rank: Rank
       nickname: Nickname
       points: Points
+  warnings:
+    match_started: You will start a new game. Continue?
