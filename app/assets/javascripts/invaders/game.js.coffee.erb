@@ -54,6 +54,8 @@ preload = ->
   game.load.audio('bomb', "<%= asset_path('bomb.wav') %>")
 
 create = ->
+  game.stage.backgroundColor = '#1b4c9e'
+  game.stage.alpha = 0.5
   game.physics.startSystem(Phaser.Physics.ARCADE)
 
   # Initialize player
