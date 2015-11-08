@@ -21,5 +21,8 @@ $ ->
     .fail ->
       console?.log "Cannot get user rank"
 
-  setInterval getRankFromServer, window.App.LEADERBOARD_UPDATE_INTERVAL
+  $("#game").on "game-over", ->
+    clearInterval(updateInterval)
+
+  updateInterval = setInterval getRankFromServer, window.App.LEADERBOARD_UPDATE_INTERVAL
 
