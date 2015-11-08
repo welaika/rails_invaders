@@ -1,4 +1,4 @@
-.nav--main
+.nav--main.hidden--on-eq-palm
   .wrap
     .grid__item.nav--expand.align--center
       = active_link_to t("nav.home"),
@@ -19,6 +19,28 @@
         page_path('instructions'),
         class: "nav__item",
         active: :exact
+      - if current_user.present?
+        = link_to signout_path, class: "nav__item"
+          i.fa.fa-github-alt
+          = " #{t('button.github.signout.short')}"
+      - else
+        = link_to signin_path, class: "nav__item"
+          i.fa.fa-github-alt
+          = " #{t('button.github.signin.short')}"
+.nav--mobile.hidden--on-lap
+  .grid__item
+    .nav__hamburger.white data-drawer="toggle"
+        span
+        span
+        span
+        span
+        span
+        span
+    .items data-drawer="menu"
+      = active_link_to t("nav.home"), root_path, class: "nav__item", active: :exact
+      = active_link_to t("nav.game"), matches_path, method: :post, class: "nav__item", active: [['matches'],['show']]
+      = active_link_to t("nav.leaderboard"), matches_path, class: "nav__item", active: [['matches'],['index']]
+      = active_link_to t("nav.instructions"), page_path('instructions'), class: "nav__item", active: :exact
       - if current_user.present?
         = link_to signout_path, class: "nav__item"
           i.fa.fa-github-alt

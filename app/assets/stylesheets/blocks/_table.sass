@@ -1,20 +1,38 @@
 .table
-  width: 100%
-  table-layout: fixed
-  background-color: transparentize($bg-color, 0.3)
-
+  +heading-font-family
   td, th
     text-align: left
     +padding(1)
 
-  th
-    +heading-font-family
-    font-variant: small-caps
+  th,
+  .table__th
     text-transform: uppercase
     border-bottom: 1px solid $border-color
+    +rem-html-reset(1.5)
+    padding: 0.25em
 
-  tr:nth-child(2n)
+  tr:nth-child(2n),
+  .table__tr:nth-child(2n)
     background-color: $bg-color
+
+  .table__td
+    +rem-html-reset(1.5)
+    padding: 0.25em
+
+  .table__position--0
+    .table__td
+      +rem-html-reset(2.5)
+      color: $active-color
+
+  .table__position--1
+    .table__td
+      +rem-html-reset(2)
+      color: $active-color
+
+  .table__position--2
+    .table__td
+      +rem-html-reset(1.5)
+      color: $active-color
 
 +at-breakpoint(lte-lap)
   .table

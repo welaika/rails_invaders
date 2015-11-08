@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
       user.provider = auth['provider']
       user.uid = auth['uid']
       user.token = auth['credentials']['token']
-      user.name = auth['info']['name'] || "" if auth['info']
+      user.name = auth['info']['nickname'] || "" if auth['info']
     end
   end
 end
