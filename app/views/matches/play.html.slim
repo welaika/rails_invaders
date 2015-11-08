@@ -1,4 +1,6 @@
-#currently_playing_count data-polling=true
+.grid__item.width--fill
+  h1#currently_playing_count data-polling=true
+  h1#current_player_rank data-polling=true
 
 .hidden
   = simple_form_for @match, remote: true, html: { id: "match-form" }, data: { polling: true } do |f|
