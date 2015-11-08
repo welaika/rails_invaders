@@ -75,3 +75,74 @@
       color: $active-color
       background-color: darken($light-bg-color, 10%)
 
+.nav--mobile
+  .nav__item
+    width: 100%
+    display: block
+    text-align: center
+    +rem-html-reset(2)
+    text-decoration: none
+    padding: 0.5em 0
+  .items
+    display: none
+
+.nav__hamburger
+  position: absolute
+  display: inline-block
+  top: 1em
+  height: 30px
+  right: 1em
+  width: 40px
+  transform: rotate(0deg)
+  transition: 0.5s ease-in-out
+  &.open
+    span
+      &:nth-child(1)
+        left: 4px
+        top: 8px
+      &:nth-child(2)
+        left: calc(50% - 4px)
+        top: 8px
+      &:nth-child(5)
+        left: 4px
+        top: 20px
+      &:nth-child(6)
+        left: calc(50% - 4px)
+        top: 20px
+
+      &:nth-child(1),
+      &:nth-child(6)
+        transform: rotate(45deg)
+      &:nth-child(2),
+      &:nth-child(5)
+        transform: rotate(-45deg)
+      &:nth-child(3)
+        left: -50%
+        opacity: 0
+      &:nth-child(4)
+        right: -50%
+        opacity: 0
+  span
+    display: block
+    position: absolute
+    height: 5px
+    width: 50%
+    opacity: 1
+    background-color: $white
+    transform: rotate(0deg)
+    transition: 0.25s ease-in-out
+    &:nth-child(odd)
+      border-radius: 9px 0 0 9px
+      left: 0
+    &:nth-child(even)
+      right: 0
+      border-radius: 0 9px 9px 0
+    &:nth-child(1),
+    &:nth-child(2)
+      top: 0
+    &:nth-child(3),
+    &:nth-child(4)
+      top: 10px
+    &:nth-child(5),
+    &:nth-child(6)
+      top: 20px
