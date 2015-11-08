@@ -4,7 +4,7 @@ $ ->
   pingUser = ->
     $.ajax
       method: 'POST'
-      url: '/ping_users'
+      url: '/ping_user'
     .done (data) ->
       $('#currently_playing_count').html(data.currently_playing_count)
 
