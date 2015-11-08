@@ -2,7 +2,7 @@ class Match < ActiveRecord::Base
   MATCH_UPDATE_INTERVAL = Integer(ENV.fetch("MATCH_UPDATE_INTERVAL"))
   LEADERBOARD_UPDATE_INTERVAL = Integer(ENV.fetch("LEADERBOARD_UPDATE_INTERVAL"))
 
-  belongs_to :user
+  belongs_to :user, counter_cache: true
   validates :user_id, :score, :status, presence: true
   validates :score, numericality: { only_integer: true }
 
