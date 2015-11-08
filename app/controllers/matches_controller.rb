@@ -2,8 +2,8 @@ class MatchesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @top_matches = Match.order_by_score.limit(20)
-    @top_users = User.order_by_matches_count.limit(20)
+    @top_matches = Match.includes(:user).order_by_score.limit(20)
+    @top_users = User.joins(:matches).order_by_matches_count.limit(20)
   end
 
   def new
