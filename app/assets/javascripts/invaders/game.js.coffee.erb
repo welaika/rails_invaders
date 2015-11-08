@@ -1,11 +1,12 @@
 player = ''
 bulletTime = 0
-initialPlayerPosition = 512
+canvasWidth = 800
+initialPlayerPosition = (canvasWidth / 2)
 lives = 3
 score = 0
 level = 0
-style = { font: "32px silkscreen", fill: "#666666", align: "center" }
-boldStyle = { font: "bold 32px silkscreen", fill: "#ffffff", align: "center" }
+style = { font: "32px molotregular", fill: "#eac224", align: "center" }
+boldStyle = { font: "bold 60px molotregular", fill: "#eac224", align: "center" }
 aliens = {}
 livesText = ''
 scoreText = ''
@@ -21,10 +22,9 @@ explodeSound = ''
 explosions = ''
 gameOverText = ''
 restartText = ''
-canvasWidth = 1024
 alienImageSize = 30
 alienSize = 48
-aliensPerRow = 16
+aliensPerRow = 12
 leapMotionController = {}
 
 Leap.loop (frame) ->
