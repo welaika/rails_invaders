@@ -7,4 +7,6 @@ class Match < ActiveRecord::Base
   validates :score, numericality: { only_integer: true }
 
   enum status: { pending: 0, started: 1, finished: 2 }
+
+  scope :order_by_score, -> { order(score: :desc) }
 end
