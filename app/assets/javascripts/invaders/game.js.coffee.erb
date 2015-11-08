@@ -1,6 +1,7 @@
 player = ''
 bulletTime = 0
 canvasWidth = 800
+canvasHeight = 500
 initialPlayerPosition = (canvasWidth / 2)
 lives = 3
 score = 0
@@ -59,7 +60,7 @@ create = ->
   game.physics.startSystem(Phaser.Physics.ARCADE)
 
   # Initialize player
-  player = game.add.sprite(initialPlayerPosition, 540, 'ship')
+  player = game.add.sprite(initialPlayerPosition, 460, 'ship')
   player.anchor.setTo(0.5, 0.5)
   game.physics.enable(player, Phaser.Physics.ARCADE)
   player.body.bounce.x = 0.5
@@ -256,7 +257,7 @@ createAliens = ->
   while y < 6
     x = 0
     while x < aliensPerRow
-      alien = aliens.create(x * alienSize, y * alienSize, "alien#{y}")
+      alien = aliens.create(x * alienSize, y * (alienSize * 0.7), "alien#{y}")
       alien.anchor.setTo 0.5, 0.5
       alien.body.moves = false
       x++
@@ -270,7 +271,7 @@ createAliens = ->
 
 animateAliens = ->
   # All this does is basically start the invaders moving. Notice we're moving the Group they belong to, rather than the invaders directly.
-  tween = game.add.tween(aliens).to( { x: (borderSpace() - alienImageSize) }, 3000, Phaser.Easing.Sinusoidal.InOut, true, 0, 1000, true)
+  tween = game.add.tween(aliens).to( { x: (borderSpace() - alienImageSize) }, 4000, Phaser.Easing.Sinusoidal.InOut, true, 0, 1000, true)
 
   # When the tween loops it calls descend
   tween.onLoop.add(descend, this)
@@ -303,4 +304,4 @@ pad = (number, length) ->
   return str
 
 if $("[data-game]").length > 0
-  game = new Phaser.Game(canvasWidth, 576, Phaser.AUTO, 'game', { preload: preload, create: create, update: update }, true)
+  game = new Phaser.Game(canvasWidth, canvasHeight, Phaser.AUTO, 'game', { preload: preload, create: create, update: update }, true)
