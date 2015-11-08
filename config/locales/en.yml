@@ -15,7 +15,7 @@ en:
   button:
     github:
       signin:
-        long: "Signup/Signin with Github"
+        long: "Signin with Github"
         short: "Signin"
       signout:
         long: "Signout from Github"
