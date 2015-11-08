@@ -1,9 +1,13 @@
 .wrap--middle.content--primary.space--both-3.align--center
-  .grid__item.width-fill
+  .grid__item.width-fill.space--bottom-3
     h3.title--active= t('pages.leaderboard.title')
     p= t('pages.leaderboard.description')
 
-  .table
+  .grid__item.width-fill.space--bottom-3
+    button.button.button--rev type="button" data-leaderboard-target="points"= t(".points_table")
+    button.button type="button" data-leaderboard-target="matches"= t(".matches_table")
+
+  .table data-leaderboard="points"
     .grid__item.width-3-12.table__th.hidden--on-eq-palm
       = t('.rank')
     .grid__item.width-6-12.table__th.hidden--on-eq-palm
@@ -11,7 +15,7 @@
     .grid__item.width-3-12.table__th.hidden--on-eq-palm
       = t('.points')
 
-    - @matches.decorate.each_with_index do |match, index|
+    - @top_matches.decorate.each_with_index do |match, index|
       .table__tr class="table__position--#{index}"
         .table__td.grid__item.width-6-12.lap-3-12
           = (index + 1).ordinalize
@@ -22,3 +26,23 @@
           = match.user_name
         .table__td.grid__item.width-6-12.lap-3-12
           = match.score
+
+  .table.hidden data-leaderboard="matches"
+    .grid__item.width-3-12.table__th.hidden--on-eq-palm
+      = t('.rank')
+    .grid__item.width-6-12.table__th.hidden--on-eq-palm
+      = t('.nickname')
+    .grid__item.width-3-12.table__th.hidden--on-eq-palm
+      = t('.matches_count')
+
+    - @top_users.decorate.each_with_index do |user, index|
+      .table__tr class="table__position--#{index}"
+        .table__td.grid__item.width-3-12
+          = (index + 1).ordinalize
+        .table__td.grid__item.width-2-12
+          .match__user-image
+            = user.profile_image_tag
+        .table__td.grid__item.width-4-12
+          = user.name
+        .table__td.grid__item.width-3-12
+          = user.matches_count

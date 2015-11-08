@@ -8,10 +8,10 @@ en:
     home:
       play_with_leapmotion: "Play with LeapMotion!"
       hero:
-        head: "Play to classic space invaders game against other players active now. Also with LeapMotion!"
+        head: "Play the classic space invaders game against other players."
     leaderboard:
       title: "Leaderboard"
-      description: "Fight enemies stronger to enter in the All of Fame!"
+      description: "Defeat more invaders and enter the hall of fame!"
   button:
     github:
       signin:
@@ -23,14 +23,17 @@ en:
   titles:
     application: Rails Invaders
   matches:
-    building: Bulding new match...
-    size_failed: "sorry but your screen resolution isn't enough to beat Invaders :("
+    building: Starting new match...
+    size_failed: "sorry but your screen resolution too low to beat invaders :("
     index:
       rank: Rank
       nickname: User
       points: Points
+      matches_count: "# Matches"
+      points_table: "Points"
+      matches_table: "#Matches"
     recap:
-      ended: "The match is ended"
+      ended: "Match already ended"
       total_score: Total score
     play:
       online_users: "Online user(s)"
@@ -38,4 +41,4 @@ en:
       level_up: "Rank up"
       level_down: "Rank down"
   warnings:
-    match_started: You will start a new game. Continue?
+    match_started: Current game will be lost. Continue?
