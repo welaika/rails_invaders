@@ -29,6 +29,6 @@ class User < ActiveRecord::Base
     WHERE matches_with_ranks.user_id = #{id}
     SQL
 
-    ActiveRecord::Base.connection.select_value(sql)
+    ActiveRecord::Base.connection.select_value(sql).try(:to_i) || nil
   end
 end
