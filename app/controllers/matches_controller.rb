@@ -24,4 +24,19 @@ class MatchesController < ApplicationController
       render :recap
     end
   end
+
+  def update
+    @match = current_user.matches.find(params[:id])
+    if @match.update(match_params)
+      head :ok
+    else
+      head :unprocessable_entity
+    end
+  end
+
+  private
+
+  def match_params
+    params.require(:match).permit(:score, :status)
+  end
 end
