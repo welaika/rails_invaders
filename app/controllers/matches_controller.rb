@@ -27,10 +27,10 @@ class MatchesController < ApplicationController
 
   def update
     @match = current_user.matches.find(params[:id])
-    if @match.update(match_params)
-      head :ok
+    if @match.started?
+      @match.update(match_params) ? head(:ok) : head(:unprocessable_entity)
     else
-      head :unprocessable_entity
+      head :forbidden
     end
   end
 
