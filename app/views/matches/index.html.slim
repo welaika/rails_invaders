@@ -11,14 +11,14 @@
     .grid__item.width-3-12.table__th
       = t('.points')
 
-    - @matches.each_with_index do |match, index|
+    - @matches.decorate.each_with_index do |match, index|
       .table__tr class="table__position--#{index}"
         .table__td.grid__item.width-3-12
           = (index + 1).ordinalize
         .table__td.grid__item.width-2-12
           .match__user-image
-            = image_tag match.user.profile_image_url
+            = match.profile_image_tag
         .table__td.grid__item.width-4-12
-          = match.user.name
+          = match.user_name
         .table__td.grid__item.width-3-12
           = match.score
