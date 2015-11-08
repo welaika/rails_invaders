@@ -10,4 +10,5 @@
 javascript:
   window.App = window.App || {};
   window.App.PING_TIMEOUT = #{User::PING_TIMEOUT * 1000};
-  window.App.MATCH_UPDATE_INTERVAL = #{Match::UPDATE_INTERVAL * 1000};
+  window.App.MATCH_UPDATE_INTERVAL = #{Match::MATCH_UPDATE_INTERVAL * 1000};
+  window.App.LEADERBOARD_UPDATE_INTERVAL = #{Match::LEADERBOARD_UPDATE_INTERVAL * 1000};
