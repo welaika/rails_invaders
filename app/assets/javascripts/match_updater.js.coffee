@@ -1,5 +1,5 @@
 $ ->
-  return unless $('#game').length
+  return unless $('[data-game]').length
 
   sendMatchToServer = ->
     $("#match-form").submit()
