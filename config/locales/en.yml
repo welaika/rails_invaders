@@ -24,5 +24,8 @@ en:
       rank: Rank
       nickname: Nickname
       points: Points
+    recap:
+      ended: Your game is ended
+      total_score: Total score
   warnings:
     match_started: You will start a new game. Continue?

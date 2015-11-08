@@ -1,2 +1,9 @@
-.grid__item.width-fill
-  h1= @match.status
+.wrap--middle.space--top-3
+  .grid__item.width-fill
+    h2= t(".ended")
+
+    h3
+      = t(".total_score")
+      | : 
+      = @match.score
+
