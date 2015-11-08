@@ -5,4 +5,4 @@ $ ->
     $("#match-form").submit()
 
   updateMatch()
-  setInterval updateMatch(), window.App.PING_TIMEOUT
+  setInterval updateMatch, window.App.MATCH_UPDATE_INTERVAL
