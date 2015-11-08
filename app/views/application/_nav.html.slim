@@ -6,10 +6,9 @@
         class: "nav__item",
         active: :exact
       = active_link_to t("nav.game"),
-        matches_path,
-        method: :post,
+        new_match_path,
         class: "nav__item",
-        active: [['matches'],['show']],
+        active: [['matches'],['show', 'new']],
         data: { confirm: @match.try(:started?) ? t("warnings.match_started") : nil }
       = active_link_to t("nav.leaderboard"),
         matches_path,
@@ -38,7 +37,7 @@
         span
     .items data-drawer="menu"
       = active_link_to t("nav.home"), root_path, class: "nav__item", active: :exact
-      = active_link_to t("nav.game"), matches_path, method: :post, class: "nav__item", active: [['matches'],['show']]
+      = active_link_to t("nav.game"), new_match_path, class: "nav__item", active: [['matches'],['show']]
       = active_link_to t("nav.leaderboard"), matches_path, class: "nav__item", active: [['matches'],['index']]
       = active_link_to t("nav.instructions"), page_path('instructions'), class: "nav__item", active: :exact
       - if current_user.present?

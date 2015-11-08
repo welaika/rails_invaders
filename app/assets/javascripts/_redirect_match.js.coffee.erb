@@ -1,0 +1,8 @@
+$ ->
+  if $("body.matches-new").length && $(window).width() >= 825
+    $('form#new_match').submit()
+  else
+    setTimeout(->
+      $("[data-size-failed]").fadeIn('slow')
+    ,3000)
+

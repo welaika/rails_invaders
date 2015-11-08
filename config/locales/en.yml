@@ -23,6 +23,8 @@ en:
   titles:
     application: Rails Invaders
   matches:
+    building: Bulding new match...
+    size_failed: "sorry but your screen resolution isn't enough to beat Invaders :("
     index:
       rank: Rank
       nickname: Nickname

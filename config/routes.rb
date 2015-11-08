@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :matches, only: [:create, :show, :index, :update]
+  resources :matches, only: [:create, :new, :show, :index, :update]
   resource :ping_user, only: :create
   resource :user_rank, only: :show
 

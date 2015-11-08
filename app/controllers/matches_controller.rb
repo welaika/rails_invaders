@@ -5,6 +5,10 @@ class MatchesController < ApplicationController
     @matches = Match.all.order_by_score.limit(20)
   end
 
+  def new
+    @match = Match.new(user_id: current_user.id)
+  end
+
   def create
     @match = Match.new(user_id: current_user.id)
     if @match.save

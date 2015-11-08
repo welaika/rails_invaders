@@ -1,0 +1,6 @@
+.grid__item.align--center.padding--both-3.new_match_page data-redirect-match="true"
+  h3.title--active= t('matches.building')
+  .hidden
+    = simple_form_for @match do |f|
+  h4.title--active.hidden data-size-failed="true"
+    = t('matches.size_failed')
