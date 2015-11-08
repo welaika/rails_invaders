@@ -1,8 +1,0 @@
-it:
-  nav:
-    home: "Home"
-    game: "Gioca!"
-    leaderboard: "Classifica"
-    instructions: "Istruzioni"
-  titles:
-    application: Rails-invaders

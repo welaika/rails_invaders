@@ -1,20 +1,21 @@
-.wrap--middle.space--top-3
+.wrap--middle.content--primary.space--both-3.align--center
   .grid__item.width-fill
-    table.table
-      thead
-        tr
-          th= t('.rank')
-        
-          th= t('.nickname')
-        
-          th= t('.points')
-      
-      tbody
-        - @matches.each_with_index do |match, index|
-          tr
-            td
-              = index + 1
-            td
-              = match.user.name          
-            td
-              = match.score
+    h3.title--active= t('pages.leaderboard.title')
+    p= t('pages.leaderboard.description')
+
+  .table
+    .grid__item.width-3-12.table__th
+      = t('.rank')
+    .grid__item.width-6-12.table__th
+      = t('.nickname')
+    .grid__item.width-3-12.table__th
+      = t('.points')
+
+    - @matches.each_with_index do |match, index|
+      .table__tr class="table__position--#{index}"
+        .table__td.grid__item.width-3-12
+          = (index + 1).ordinalize
+        .table__td.grid__item.width-6-12
+          = match.user.name
+        .table__td.grid__item.width-3-12
+          = match.score

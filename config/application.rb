@@ -11,7 +11,7 @@ Bundler.require(*Rails.groups)
 module RailsInvaders
   class Application < Rails::Application
     config.i18n.enforce_available_locales = true
-    config.i18n.available_locales = [:en, :it]
+    config.i18n.available_locales = [:en]
     config.quiet_assets = true
     config.generators do |generate|
       generate.helper false

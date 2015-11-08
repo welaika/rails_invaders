@@ -9,6 +9,9 @@ en:
       hero:
         head: "Play to classic space invaders game against other players active now"
         text: "Challenge other users and climb leaderboard live becoming the new Rails Invaders Hero. Are you so brave?"
+    leaderboard:
+      title: "Leaderboard"
+      description: "sglkdflgksdkldfjkldsf fdsf dsfdsf dsf"
   button:
     github:
       signin:
