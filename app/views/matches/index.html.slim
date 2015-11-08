@@ -4,21 +4,21 @@
     p= t('pages.leaderboard.description')
 
   .table
-    .grid__item.width-3-12.table__th
+    .grid__item.width-3-12.table__th.hidden--on-eq-palm
       = t('.rank')
-    .grid__item.width-6-12.table__th
+    .grid__item.width-6-12.table__th.hidden--on-eq-palm
       = t('.nickname')
-    .grid__item.width-3-12.table__th
+    .grid__item.width-3-12.table__th.hidden--on-eq-palm
       = t('.points')
 
     - @matches.decorate.each_with_index do |match, index|
       .table__tr class="table__position--#{index}"
-        .table__td.grid__item.width-3-12
+        .table__td.grid__item.width-6-12.lap-3-12
           = (index + 1).ordinalize
-        .table__td.grid__item.width-2-12
+        .table__td.grid__item.width-6-12.lap-2-12
           .match__user-image
             = match.profile_image_tag
-        .table__td.grid__item.width-4-12
+        .table__td.grid__item.width-6-12.lap-4-12
           = match.user_name
-        .table__td.grid__item.width-3-12
+        .table__td.grid__item.width-6-12.lap-3-12
           = match.score
