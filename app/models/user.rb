@@ -13,4 +13,19 @@ class User < ActiveRecord::Base
       user.name = auth['info']['nickname'] || "" if auth['info']
     end
   end
+
+  def best_rank
+    sql = <<-SQL
+    WITH matches_with_ranks AS (
+      SELECT matches.*, rank() OVER (ORDER BY matches.score DESC) AS user_rank
+      FROM matches
+    )
+
+    SELECT user_rank
+    FROM matches_with_ranks
+    WHERE matches_with_ranks.user_id = #{id}
+    SQL
+
+    ActiveRecord::Base.connection.select_value(sql)
+  end
 end
