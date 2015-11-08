@@ -1,4 +1,4 @@
-#currently_playing_count
+#currently_playing_count data-polling=true
 
 .hidden
   = simple_form_for @match, remote: true, html: { id: "match-form" } do |f|
@@ -6,4 +6,4 @@
     = f.input :status, as: :string
 
 .game__field
-  #game data-game="true"
+  #game data-game=true data-polling=true

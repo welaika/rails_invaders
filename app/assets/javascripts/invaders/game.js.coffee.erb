@@ -309,5 +309,5 @@ pad = (number, length) ->
     str = '0' + str
   return str
 
-if $("[data-game=true]").length > 0
+if $("[data-game]").length > 0
   game = new Phaser.Game(canvasWidth, 576, Phaser.AUTO, 'game', { preload: preload, create: create, update: update }, true)
