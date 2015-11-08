@@ -35,7 +35,7 @@ en:
     play:
       online_users: "Online user(s)"
       rank: "Leaderboard rank"
-      level_up: "Level up"
-      level_down: "Level down"
+      level_up: "Rank up"
+      level_down: "Rank down"
   warnings:
     match_started: You will start a new game. Continue?
