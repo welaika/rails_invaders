@@ -1,9 +1,9 @@
 player = ''
 bulletTime = 0
 initialPlayerPosition = 512
-lives = 3
+lives = 4
 score = 0
-highScore = 0
+level = 0
 style = { font: "32px silkscreen", fill: "#666666", align: "center" }
 boldStyle = { font: "bold 32px silkscreen", fill: "#ffffff", align: "center" }
 aliens = {}
@@ -98,13 +98,10 @@ create = ->
   livesText = game.add.text(game.world.bounds.width - 16, 16, "LIVES: " + lives, style)
   livesText.anchor.set(1, 0)
 
-  scoreText = game.add.text(game.world.centerX, 16, '', style)
-  scoreText.anchor.set(0.5, 0)
+  scoreText = game.add.text(16, 16, '', style)
+  scoreText.anchor.set(0, 0)
 
-  highScoreText = game.add.text(16, 16, '', style)
-  highScoreText.anchor.set(0, 0)
-
-  getHighScore()
+  updateLevel()
 
   updateScore()
 
@@ -207,16 +204,16 @@ explode = (entity) ->
 updateLivesText = ->
   livesText.text = "LIVES: " + lives
 
-getHighScore = ->
-  savedHighScore = Cookies.get('highScore')
-  if (savedHighScore != undefined)
-    highScore = savedHighScore
+updateLevel = ->
+  level += 1
+  levelText = game.add.text((game.world.bounds.width / 2), (game.world.bounds.height / 2), "Level: " + level, style)
+  levelText.anchor.set(0.5, 0.5)
+  setTimeout(->
+    levelText.destroy()
+  , 1000)
 
 updateScore = ->
-  if (score > highScore)
-    highScore = score
   scoreText.text = pad(score, 6)
-  highScoreText.text = "HIGH: " + pad(highScore, 6)
 
 respawnPlayer = ->
   player.body.x = initialPlayerPosition
@@ -226,9 +223,12 @@ respawnPlayer = ->
 
 newWave = ->
   setTimeout(->
+    bombs.createMultiple(10 * level, 'bomb')
+    updateLevel()
     aliens.removeAll()
     createAliens()
     animateAliens()
+    levelText.remove()
   , 1000)
 
 restartGame = ->
@@ -247,8 +247,6 @@ gameOver = ->
     gameOverText.anchor.set(0.5, 0.5)
     restartText = game.add.text(game.world.centerX, game.world.height - 16, "PRESS 'S' TO RESTART", style)
     restartText.anchor.set(0.5, 1)
-
-    Cookies.set('highScore', highScore, { expires: '2078-12-31' })
   , 1000)
 
 createAliens = ->
@@ -307,4 +305,4 @@ pad = (number, length) ->
   return str
 
 if $("[data-game=true]").length > 0
-  game = new Phaser.Game(canvasWidth, 576, Phaser.AUTO, 'game', { preload: preload, create: create, update: update })
+  game = new Phaser.Game(canvasWidth, 576, Phaser.AUTO, 'game', { preload: preload, create: create, update: update }, true)
