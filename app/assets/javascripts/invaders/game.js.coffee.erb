@@ -126,6 +126,10 @@ update = ->
   if (fireButton.isDown && player.alive)
     fireBullet()
 
+  # Restart?
+  if (restartButton.isDown && lives == 0)
+    restartGame()
+
   # Handle aliens dropping bombs
   handleBombs()
 
@@ -231,14 +235,7 @@ newWave = ->
   , 1000)
 
 restartGame = ->
-  gameOverText.destroy()
-  restartText.destroy()
-  lives = 3
-  score = 0
-  updateScore()
-  updateLivesText()
-  respawnPlayer()
-  newWave()
+  window.location.href = "/matches/new"
 
 gameOver = ->
   $("#game").trigger("game-over", score)
@@ -246,7 +243,7 @@ gameOver = ->
   setTimeout(->
     gameOverText = game.add.text(game.world.centerX, game.world.centerY, "GAME OVER", boldStyle)
     gameOverText.anchor.set(0.5, 0.5)
-    restartText = game.add.text(game.world.centerX, game.world.height - 16, "Play again from the topbar", style)
+    restartText = game.add.text(game.world.centerX, game.world.height - 16, "PRESS 'S' TO RESTART", style)
     restartText.anchor.set(0.5, 1)
   , 1000)
 
