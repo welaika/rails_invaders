@@ -18,6 +18,10 @@
         page_path('instructions'),
         class: "nav__item",
         active: :exact
+      = active_link_to t("nav.statistics"),
+        page_path('statistics'),
+        class: "nav__item",
+        active: :exact
       - if current_user.present?
         = link_to signout_path, class: "nav__item"
           i.fa.fa-github-alt

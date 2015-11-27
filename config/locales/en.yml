@@ -4,6 +4,7 @@ en:
     game: "Play now!"
     leaderboard: "Leaderboard"
     instructions: "Instructions"
+    statistics: "Statistics"
   pages:
     home:
       play_with_leapmotion: "Play with LeapMotion!"

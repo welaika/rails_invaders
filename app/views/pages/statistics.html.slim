@@ -1,0 +1,10 @@
+.grid__item.width-12-12
+  .wrap--middle.content--primary.space--both-3.align--center
+    h3.title--active Statistics
+    h4.title--active Total users
+    p= User.count
+    h4.title--active Aliens killed
+    p= Match.pluck(:score).sum / 10
+    h4.title--active Destroyed spaceships
+    p= Match.pluck(:score).map {|r| (r/720) + 4}.sum
+
