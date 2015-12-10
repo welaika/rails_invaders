@@ -9,5 +9,5 @@ class Match < ActiveRecord::Base
   enum status: { pending: 0, started: 1, finished: 2 }
 
   scope :order_by_score, -> { order(score: :desc) }
-  scope :valid, -> { where(valid: true) }
+  scope :visible, -> { where(visible: true) }
 end
