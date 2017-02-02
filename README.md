@@ -7,3 +7,6 @@ with the necessary dependencies to run and test this app:
 
     % ./bin/setup
 
+## Author
+
+made with ❤️ and ☕️ by [weLaika](http://dev.welaika.com)
