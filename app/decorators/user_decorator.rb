@@ -7,6 +7,6 @@ class UserDecorator < Draper::Decorator
   end
 
   def name
-    user.try(:name) || "Anonymous"
+    user.try(:name) || 'Anonymous'
   end
 end

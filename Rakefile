@@ -7,5 +7,5 @@ Rails.application.load_tasks
 task(:default).clear
 
 task default: :rubocop
-task default: "brakeman:check"
-task default: "bundler:audit"
+task default: 'brakeman:check'
+task default: 'bundler:audit'

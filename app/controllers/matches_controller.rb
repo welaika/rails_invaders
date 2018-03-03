@@ -13,9 +13,9 @@ class MatchesController < ApplicationController
   def create
     @match = Match.new(user_id: current_user.id)
     if @match.save
-      redirect_to match_path(@match, anchor: "game")
+      redirect_to match_path(@match, anchor: 'game')
     else
-      redirect_to root_path, alert: "Something went wrong creating a new match"
+      redirect_to root_path, alert: 'Something went wrong creating a new match'
     end
   end
 

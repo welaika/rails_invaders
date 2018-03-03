@@ -1,8 +1,7 @@
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   DisplayCopNames: true
   TargetRubyVersion: 2.2
+  TargetRailsVersion: 4.2
   Exclude:
     - 'bin/*'
     - 'config/**/*'
@@ -10,25 +9,15 @@ AllCops:
     - 'tmp/**/*'
     - 'vendor/**/*'
 
-Layout/TrailingBlankLines:
-  Exclude:
-    - 'Gemfile'
-
 Metrics/AbcSize:
   Max: 20
 
 Metrics/BlockLength:
   Exclude:
-    - 'app/admin/**/*'
     - 'lib/tasks/*.rake'
-    - 'spec/**/*'
 
 Metrics/LineLength:
   Max: 100
-
-Naming/FileName:
-  Exclude:
-    - 'app/views/**/*'
 
 Rails:
   Enabled: true
