@@ -1,24 +1,37 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
-  RunRailsCops: true
+  DisplayCopNames: true
+  TargetRubyVersion: 2.2
   Exclude:
-    - "db/**/*"
-    - "config/**/*"
-    - "bin/*"
-    - "spec/i18n_spec.rb"
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Layout/TrailingBlankLines:
+  Exclude:
+    - 'Gemfile'
+
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/admin/**/*'
+    - 'lib/tasks/*.rake'
+    - 'spec/**/*'
 
 Metrics/LineLength:
   Max: 100
 
-Style/StringLiterals:
-  Enabled: false
-  EnforcedStyle: double_quotes
+Naming/FileName:
+  Exclude:
+    - 'app/views/**/*'
+
+Rails:
+  Enabled: true
 
 Style/Documentation:
   Enabled: false
-
-Metrics/AbcSize:
-  Max: 18
-
-Lint/Debugger:
-  Exclude:
-    - "spec/support/capybara_webkit.rb"
