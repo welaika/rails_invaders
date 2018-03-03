@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.6'
 
 gem 'active_link_to'
 gem 'autoprefixer-rails'
