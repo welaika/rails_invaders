@@ -3,7 +3,7 @@
   - if current_user.present?
     = link_to new_match_path, class: "button--huge button--active align--center"
       i.fa.fa-gamepad
-      = "#{current_user.name || 'Player'} start game!"
+      = " #{current_user.name || 'Player'} start game!"
   - else
     = link_to signin_path, class: "button--huge button--active align--center"
       i.fa.fa-github-alt
