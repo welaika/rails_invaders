@@ -1,5 +1,7 @@
 # Rails-invaders
 
+Play the classic space invaders game against other players with real time leaderboard.
+
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
