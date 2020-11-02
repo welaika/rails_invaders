@@ -177,7 +177,7 @@ GEM
       rails-assets-jquery (> 1.8)
     rails-assets-lodash (4.17.15)
     rails-assets-normalize-css (8.0.1)
-    rails-assets-phaser (3.19.0)
+    rails-assets-phaser (2.4.9)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -285,7 +285,7 @@ DEPENDENCIES
   rails-assets-jquery-ujs!
   rails-assets-lodash!
   rails-assets-normalize-css!
-  rails-assets-phaser!
+  rails-assets-phaser (~> 2.4.4)!
   rails_stdout_logging
   rubocop
   sass-rails (~> 5.0)

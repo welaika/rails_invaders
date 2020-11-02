@@ -27,7 +27,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jquery-ujs'
   gem 'rails-assets-lodash'
   gem 'rails-assets-normalize-css'
-  gem 'rails-assets-phaser'
+  gem 'rails-assets-phaser', '~> 2.4.4'
 end
 
 group :development do
