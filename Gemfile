@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '2.3.6'
+ruby '2.6.5'
 
 gem 'active_link_to'
 gem 'autoprefixer-rails'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 gem 'delayed_job_active_record'
 gem 'draper'
 gem 'flutie'
@@ -13,7 +13,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg', '< 1.0'
 gem 'puma'
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5.2.4.4'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'slim-rails'
@@ -27,12 +27,11 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-jquery-ujs'
   gem 'rails-assets-lodash'
   gem 'rails-assets-normalize-css'
-  gem 'rails-assets-phaser'
+  gem 'rails-assets-phaser', '~> 2.4.4'
 end
 
 group :development do
   gem 'letter_opener'
-  gem 'quiet_assets'
 end
 
 group :development, :test do
