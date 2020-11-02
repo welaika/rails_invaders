@@ -25,7 +25,7 @@ module RailsInvaders
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.time_zone = 'Rome' # NOTE: probabilmente da cambiare se vogliamo far vedere delle date sensate agli utenti
     config.i18n.default_locale = :en
-    config.active_record.raise_in_transactional_callbacks = true
+    # config.active_record.raise_in_transactional_callbacks = true
     config.active_job.queue_adapter = :delayed_job
   end
 end
